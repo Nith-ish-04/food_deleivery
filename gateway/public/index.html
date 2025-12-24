@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodDelivery App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">FoodieExpress</div>
+        <div class="location">📍 Bangalore, India</div>
+        <div class="nav-items">
+            <input type="text" placeholder="Search for food..." oninput="filterRestaurants(this.value)"
+                style="padding: 8px; border-radius: 5px; border: 1px solid #ddd; margin-right: 20px;">
+            <span onclick="alert('Offers coming soon!')">Offers</span>
+            <span onclick="alert('Help center unavailable in demo')">Help</span>
+            <span onclick="alert('Login simulated')">Sign In</span>
+            <span class="cart-icon" onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Hungry? Order & Eat.</h1>
+            <p>Order food from favourite restaurants near you.</p>
+        </section>
+
+        <!-- Restaurant List -->
+        <section class="restaurant-section">
+            <h2>Top Restaurants</h2>
+            <div id="restaurant-grid" class="grid">
+                <!-- Restaurants will be loaded here -->
+                <div class="loading">Loading restaurants...</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button onclick="toggleCart()">×</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Cart items here -->
+            <p class="empty-cart">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total">Total: ₹<span id="cart-total">0.00</span></div>
+            <button onclick="placeOrder()" class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+    <div id="overlay" class="overlay" onclick="toggleCart()"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

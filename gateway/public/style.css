@@ -1,0 +1,214 @@
+:root {
+    --primary: #fc8019;
+    --text: #3d4152;
+    --light-text: #686b78;
+    --bg: #fff;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    background: white;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--primary);
+}
+
+.nav-items span {
+    margin-left: 30px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.nav-items span:hover {
+    color: var(--primary);
+}
+
+/* Hero */
+.hero {
+    background: #171a29;
+    color: white;
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.hero h1 { margin: 0; font-size: 3rem; }
+.hero p { opacity: 0.8; font-size: 1.2rem; }
+
+/* Grid */
+.restaurant-section {
+    padding: 40px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Restaurant Card */
+.card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    cursor: pointer;
+    border: 1px solid #eee;
+}
+
+.card:hover {
+    transform: scale(0.98);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 15px;
+}
+
+.card-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.card-meta {
+    font-size: 0.9rem;
+    color: var(--light-text);
+    display: flex;
+    justify-content: space-between;
+}
+
+.rating {
+    background: #48c479;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+/* Menu Section (Inside Card for simplicity in this demo) */
+.menu-preview {
+    padding: 10px 15px;
+    border-top: 1px dashed #ddd;
+    background: #fdfdfd;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.add-btn {
+    background: white;
+    border: 1px solid #60b246;
+    color: #60b246;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.add-btn:hover {
+    background: #60b246;
+    color: white;
+}
+
+/* Cart Sidebar */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 100vh;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    z-index: 200;
+    transition: right 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar.open {
+    right: 0;
+}
+
+.cart-header {
+    padding: 20px;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-items {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.cart-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+.checkout-btn {
+    width: 100%;
+    background: #60b246;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 150;
+    display: none;
+}
+
+.overlay.open { display: block; }
