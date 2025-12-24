@@ -71,3 +71,11 @@ app.get('/', (req, res) => {
 
 // Export for Vercel
 module.exports = app;
+
+// Start server if run locally
+if (require.main === module) {
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
+}
